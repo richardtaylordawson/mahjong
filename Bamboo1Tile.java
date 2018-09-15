@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Bamboo1Tile extends PictureTile {
-	private Image image;
+    private Image image;
 
     public Bamboo1Tile() {
         super("Sparrow");
