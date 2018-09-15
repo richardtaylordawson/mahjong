@@ -76,11 +76,11 @@ public class CharacterTile extends Tile {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-		Graphics2D g2 = (Graphics2D)g;
+        Graphics2D g2 = (Graphics2D)g;
 
-		//Draw Small Character in Corner
-		g2.setColor(Color.RED);
-		g2.drawString(Character.toString(symbol), 68, 23);
+        //Draw Small Character in Corner
+        g2.setColor(Color.RED);
+        g2.drawString(Character.toString(symbol), 68, 23);
 
         //Decide what type of character tile needs to be drawn
         if(this.symbol == '1' || this.symbol == '2' || this.symbol == '3' ||

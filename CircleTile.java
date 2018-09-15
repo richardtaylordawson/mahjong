@@ -48,7 +48,7 @@ public class CircleTile extends RankTile {
                 this.circles = drawCircle1();
                 Pancake p = new Pancake();
                 p.drawPancake(g2);
-            break;
+                break;
             case 2:
                 this.circles = drawCircle2();
                 break;
