@@ -4,9 +4,9 @@ import	java.util.*;
 import	javax.swing.*;
 
 public class Gameboard extends JFrame {
-    private	GridBagLayout layout = new GridBagLayout();
-    private	GridBagConstraints constraints = new GridBagConstraints();
-    private	JPanel tilePanel = new JPanel(layout);
+    private GridBagLayout layout = new GridBagLayout();
+    private GridBagConstraints constraints = new GridBagConstraints();
+    private JPanel tilePanel = new JPanel(layout);
 
     public Gameboard() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,6 +78,6 @@ public class Gameboard extends JFrame {
     }
 
     public static void main(String[] args) {
-        new Lab5();
+        new Gameboard();
     }
 }
