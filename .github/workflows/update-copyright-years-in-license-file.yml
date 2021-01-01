@@ -1,9 +1,9 @@
-name: Update copyright year(s) in license file
+name: Update Copyright Year(s) in License File
 
 on: "workflow_dispatch"
 
 jobs:
-  update-release:
+  update-staging:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -11,16 +11,15 @@ jobs:
         fetch-depth: 0
     - uses: FantasticFiasco/action-update-license-year@v2
       with:
-        branchName: "release"
+        branchName: "staging"
         token: ${{ secrets.TOKEN }}
   create-production-pull-request:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: pull-request
-      uses: repo-sync/pull-request@v2
+    - uses: repo-sync/pull-request@v2
       with:
-        source_branch: "release"
-        destination_branch: "production"
+        source_branch: "origin/staging"
+        destination_branch: "origin/production"
         pr_title: "Syncing ${{ github.ref }} into production"
         github_token: ${{ secrets.TOKEN }}
