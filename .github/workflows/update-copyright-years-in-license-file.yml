@@ -1,5 +1,7 @@
 name: Update copyright year(s) in license file
 
+on: "workflow_dispatch"
+
 jobs:
   update-production:
     runs-on: ubuntu-latest
