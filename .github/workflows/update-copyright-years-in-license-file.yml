@@ -1,9 +1,9 @@
-name: Update copyright year(s) in license file
+name: Update Copyright Year(s) in License File
 
 on: "workflow_dispatch"
 
 jobs:
-  update-release:
+  update-staging:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -17,10 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: pull-request
-      uses: repo-sync/pull-request@v2
+    - uses: repo-sync/pull-request@v2
       with:
-        source_branch: "release"
+        source_branch: "staging"
         destination_branch: "production"
         pr_title: "Syncing ${{ github.ref }} into production"
         github_token: ${{ secrets.TOKEN }}
