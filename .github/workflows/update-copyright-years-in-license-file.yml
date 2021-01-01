@@ -13,3 +13,14 @@ jobs:
       with:
         branchName: "release"
         token: ${{ secrets.TOKEN }}
+  create-production-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        source_branch: "release"
+        destination_branch: "production"
+        pr_title: "Syncing ${{ github.ref }} into production"
+        github_token: ${{ secrets.TOKEN }}
